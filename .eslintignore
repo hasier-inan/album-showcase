@@ -1,0 +1,19 @@
+# Ignore all the following patterns during linting #
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dependency directories
+node_modules
+
+# Karma config
+karma.conf.js
+
+# Webpack config
+webpack.*config.js
+
+# Markdown Renderer
+markdown-render.js
+
+# Lib
+lib

@@ -1,0 +1,23 @@
+machine:
+  node:
+    version: 5.10.1
+
+general:
+  artifacts:
+    - "package.json"
+
+dependencies:
+  pre:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+    - sudo apt-get update; sudo apt-get install libicu52
+    - curl --output /home/ubuntu/bin/phantomjs-2.0.0-linux-x86_64-dynamic https://s3.amazonaws.com/circle-support-bucket/phantomjs/phantomjs-2.0.0-linux-x86_64-dynamic
+    - chmod a+x /home/ubuntu/bin/phantomjs-2.0.0-linux-x86_64-dynamic
+    - sudo ln -s --force /home/ubuntu/bin/phantomjs-2.0.0-linux-x86_64-dynamic /usr/local/bin/phantomjs
+    - rm -rf node_modules/
+
+test:
+ override:
+   - pwd
+   - npm run lint
+   - npm run test
+   - npm run build
