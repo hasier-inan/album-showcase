@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AlbumShowcase from './src/preview';
+
 const Preview = () =>
   <div>
     <AlbumShowcase />

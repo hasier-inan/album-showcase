@@ -1,0 +1,111 @@
+.showcase-container {
+  position: relative;
+  margin-top: 10%;
+  margin-left: 30%;
+  perspective: 1800px;
+  width: 500px;
+  float: left;
+  z-index: 1;
+
+  .artwork {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+    &.artwork--front-view:hover {
+      transform: rotate3d(0,1,0,35deg);
+    }
+
+    &.artwork--inside-view {
+      transform: translate3d(0,0,150px) rotate3d(0,1,0,0deg);
+
+      .artwork__front {
+        transform: translate3d(0,0,0px) rotate3d(0,1,0,-179deg);
+      }
+    }
+
+    &.artwork--back-view {
+      transform: translate3d(0,0,0px) rotate3d(0,1,0,180deg);
+    }
+
+    .artwork-cover {
+      width: 500px;
+      height: 500px;
+      display: block;
+      position: absolute;
+    }
+
+    .artwork__front {
+      transform-style: preserve-3d;
+      transform-origin: 0% 50%;
+      transition: transform 1s;
+      transform: translate3d(0,0,20px);
+      z-index: 10;
+
+      > div {
+        border-radius: 0 3px 3px 0;
+        box-shadow:
+                inset 4px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        &.artwork__front-inlay {
+          background-color: #a04239;
+          transform: rotate3d(0,1,0,-179deg);
+        }
+
+        &.artwork__front-cover{
+          background-color: #80B3FF;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+        left: -1px;
+        width: 1px;
+      }
+    }
+
+    .artwork__back {
+      background-color: #74ffe9;
+      transform: rotate3d(0,1,0,-180deg) translate3d(0,0,20px);
+      box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+      border-radius: 3px 0 0 3px;
+
+      &:after {
+        left: auto;
+        right: 10px;
+      }
+    }
+
+    .artwork__spine {
+      width: 40px;
+      left: -20px;
+      display: block;
+      position: absolute;
+
+      &.artwork__spine-left{
+        background-color: #ff0c00;
+
+        height: 500px;
+        transform: rotate3d(0,1,0,-90deg);
+      }
+
+      &.artwork__spine-right{
+        background-color: #fff;
+
+        height: 490px;
+        top: 5px;
+        transform: rotate3d(0,1,0,90deg) translate3d(0,0,295px);
+        backface-visibility: hidden;
+      }
+    }
+
+  }
+}
