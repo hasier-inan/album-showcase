@@ -26,22 +26,22 @@ class AlbumShowcase extends React.Component {
 
   back() {
     const backCover = albumType()[this.props.type].back;
-    return { WebkitTransform: `rotateY(-179deg) translateZ(${backCover.spine / 2}px)`,
-      transform: `rotateY(-179deg) translateZ(${backCover.spine / 2}px)` };
+    return { WebkitTransform: `rotateY(-179deg) translateZ(${backCover.spine}px)`,
+      transform: `rotateY(-179deg) translateZ(${backCover.spine}px)` };
   }
 
   front() {
     const backCover = albumType()[this.props.type].back;
-    return { WebkitTransform: `translateZ(${backCover.spine / 2}px)`,
-      transform: `translateZ(${backCover.spine / 2}px)`
+    return { WebkitTransform: `translateZ(${backCover.spine}px)`,
+      transform: `translateZ(${backCover.spine}px)`
     };
   }
 
   spine() {
     const backCover = albumType()[this.props.type].back;
     return { height: `${backCover.height}px`,
-      width: `${backCover.spine}px`,
-      left: `${-backCover.spine / 2}px` };
+      width: `${backCover.spine * 2}px`,
+      left: `${-backCover.spine}px` };
   }
 
   render() {

@@ -33,13 +33,13 @@ describe('<AlbumShowcase />', () => {
     });
 
     it('should include front properties', () => {
-      const spineWidth = albumType().jewelcase.back.spine / 2;
+      const spineWidth = albumType().jewelcase.back.spine;
       expect(albumShowcase.find('.artwork__front')).to.have.style('-webkit-transform').equal(`translateZ(${spineWidth}px)`);
       expect(albumShowcase.find('.artwork__front')).to.have.style('transform').equal(`translateZ(${spineWidth}px)`);
     });
 
     it('should include back properties', () => {
-      const spineWidth = albumType().jewelcase.back.spine / 2;
+      const spineWidth = albumType().jewelcase.back.spine;
       expect(albumShowcase.find('.artwork__back')).to.have.style('-webkit-transform').equal(`rotateY(-179deg) translateZ(${spineWidth}px)`);
       expect(albumShowcase.find('.artwork__back')).to.have.style('transform').equal(`rotateY(-179deg) translateZ(${spineWidth}px)`);
     });
@@ -48,8 +48,8 @@ describe('<AlbumShowcase />', () => {
       const backCover = albumType().jewelcase.back;
       [0, 1].forEach((index) => {
         expect(albumShowcase.find('.artwork__spine').at(index)).to.have.style('height').equal(`${backCover.height}px`);
-        expect(albumShowcase.find('.artwork__spine').at(index)).to.have.style('width').equal(`${backCover.spine}px`);
-        expect(albumShowcase.find('.artwork__spine').at(index)).to.have.style('left').equal(`${-backCover.spine / 2}px`);
+        expect(albumShowcase.find('.artwork__spine').at(index)).to.have.style('width').equal(`${backCover.spine * 2}px`);
+        expect(albumShowcase.find('.artwork__spine').at(index)).to.have.style('left').equal(`${-backCover.spine}px`);
       });
     });
   });

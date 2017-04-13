@@ -1,36 +1,26 @@
 const albumType = () => {
-  // const dimensions = {
-  //   jewelcase: {
-  //     box: [1500, 1175, 600],
-  //     front: [1490, 1490],
-  //     inlay: [1490, 1490],
-  //     back: [1490, 1165],
-  //     inside: [1490, 1165],
-  //   }
-  // };
-
   const dimensions = {
     jewelcase: {
       box: {
-        width: 500,
-        height: 500
+        width: 600,
+        height: 510
       },
       front: {
-        width: 500,
-        height: 500
+        width: 600,
+        height: 510
       },
       inlay: {
-        width: 500,
-        height: 500
+        width: 600,
+        height: 510
       },
       back: {
-        width: 500,
-        height: 500,
-        spine: 80
+        width: 600,
+        height: 510,
+        spine: 26
       },
       inside: {
-        width: 500,
-        height: 500
+        width: 600,
+        height: 510
       }
     }
   };
