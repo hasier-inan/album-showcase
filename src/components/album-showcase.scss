@@ -3,36 +3,52 @@
   margin-top: 10%;
   margin-left: 30%;
   perspective: 1800px;
-  width: 500px;
   float: left;
   z-index: 1;
 
   .artwork {
     position: absolute;
-    width: 100%;
-    height: 500px;
     transform-style: preserve-3d;
     transition: transform 1s;
 
-    &.artwork--front-view:hover {
-      transform: rotate3d(0,1,0,35deg);
+    &.artwork--front-view {
+
+      &.artwork--front-view-hover{
+        transform: rotate3d(0,1,0,35deg);
+      }
+
+      .artwork--hover{
+        height: 100%;
+        z-index: 11;
+        position: absolute;
+
+        &.artwork--hover-left{
+          width: 20%;
+        }
+
+        &.artwork--hover-right{
+          width: 80%;
+          left: 20%;
+        }
+      }
+
     }
 
     &.artwork--inside-view {
       transform: translate3d(0,0,150px) rotate3d(0,1,0,0deg);
 
       .artwork__front {
-        transform: translate3d(0,0,0px) rotate3d(0,1,0,-179deg);
+        transform: translate3d(0,0,0px) rotate3d(0,1,0,-179deg) !important;
       }
     }
 
     &.artwork--back-view {
-      transform: translate3d(0,0,0px) rotate3d(0,1,0,180deg);
+      transform: translate3d(0,0,0px) rotate3d(0,1,0,179deg);
     }
 
     .artwork-cover {
-      width: 500px;
-      height: 500px;
+      width: inherit;
+      height: inherit;
       display: block;
       position: absolute;
     }
@@ -41,13 +57,11 @@
       transform-style: preserve-3d;
       transform-origin: 0% 50%;
       transition: transform 1s;
-      transform: translate3d(0,0,20px);
       z-index: 10;
 
       > div {
         border-radius: 0 3px 3px 0;
-        box-shadow:
-                inset 4px 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1;
         backface-visibility: hidden;
         transform-style: preserve-3d;
@@ -74,7 +88,6 @@
 
     .artwork__back {
       background-color: #74ffe9;
-      transform: rotate3d(0,1,0,-180deg) translate3d(0,0,20px);
       box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
       border-radius: 3px 0 0 3px;
 
@@ -85,22 +98,16 @@
     }
 
     .artwork__spine {
-      width: 40px;
-      left: -20px;
       display: block;
       position: absolute;
 
       &.artwork__spine-left{
         background-color: #ff0c00;
-
-        height: 500px;
         transform: rotate3d(0,1,0,-90deg);
       }
 
       &.artwork__spine-right{
         background-color: #fff;
-
-        height: 490px;
         top: 5px;
         transform: rotate3d(0,1,0,90deg) translate3d(0,0,295px);
         backface-visibility: hidden;

@@ -9,7 +9,7 @@ class Preview extends Component {
   render() {
     return (
       <section>
-        <AlbumShowcase />
+        <AlbumShowcase type={'jewelcase'} />
       </section>
     );
   }
