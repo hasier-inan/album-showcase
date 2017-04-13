@@ -89,9 +89,24 @@
     }
 
     .artwork__back {
-      background-color: #74ffe9;
-      box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
-      border-radius: 3px 0 0 3px;
+      transform-style: preserve-3d;
+
+      > div {
+        border-radius: 0 3px 3px 0;
+        box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        &.artwork__back-inlay{
+          background-color: #ff7bfe;
+          transform: rotate3d(0,1,0,-179deg);
+        }
+
+        &.artwork__back-cover{
+          background-color: #ffe646;
+        }
+      }
 
       &:after {
         left: auto;

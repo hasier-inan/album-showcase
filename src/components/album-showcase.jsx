@@ -74,7 +74,10 @@ class AlbumShowcase extends React.Component {
             className="artwork-cover artwork__back"
             style={this.back()}
             onClick={() => this.updateView('front')}
-          />
+          >
+            <div className="artwork-cover artwork__back-cover" />
+            <div className="artwork-cover artwork__back-inlay" />
+          </div>
           <div className="artwork__spine artwork__spine-right" style={this.spine()} />
           <div className="artwork__spine artwork__spine-left" style={this.spine()} />
         </div>
