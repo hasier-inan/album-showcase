@@ -61,11 +61,11 @@ class AlbumShowcase extends React.Component {
           <div
             className="artwork--hover artwork--hover-right"
             style={this.front()}
-            onClick={() => this.updateView('inside')}
+            onClick={() => this.updateView('inlay')}
           />
           <div className="artwork-cover artwork__front" style={this.front()}>
             <div
-              className="artwork-cover artwork__front-inlay"
+              className="artwork-cover artwork__front-inside"
               onClick={() => this.updateView('front')}
             />
             <div className="artwork-cover artwork__front-cover" />

@@ -9,7 +9,7 @@ const albumType = () => {
         width: 600,
         height: 510
       },
-      inlay: {
+      inside: {
         width: 600,
         height: 510
       },
@@ -18,7 +18,7 @@ const albumType = () => {
         height: 510,
         spine: 26
       },
-      inside: {
+      inlay: {
         width: 600,
         height: 510
       }

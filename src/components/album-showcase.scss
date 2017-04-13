@@ -21,6 +21,7 @@
         height: 100%;
         z-index: 11;
         position: absolute;
+        cursor: pointer;
 
         &.artwork--hover-left{
           width: 20%;
@@ -34,7 +35,7 @@
 
     }
 
-    &.artwork--inside-view {
+    &.artwork--inlay-view {
       transform: translate3d(0,0,150px) rotate3d(0,1,0,0deg);
 
       .artwork__front {
@@ -51,6 +52,7 @@
       height: inherit;
       display: block;
       position: absolute;
+      cursor: pointer;
     }
 
     .artwork__front {
@@ -66,7 +68,7 @@
         backface-visibility: hidden;
         transform-style: preserve-3d;
 
-        &.artwork__front-inlay {
+        &.artwork__front-inside {
           background-color: #a04239;
           transform: rotate3d(0,1,0,-179deg);
         }

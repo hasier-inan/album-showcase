@@ -60,9 +60,9 @@ describe('<AlbumShowcase />', () => {
       expect(albumShowcase.find('.artwork.artwork--back-view')).to.have.length(1);
     });
 
-    it('changes to inside view', () => {
+    it('changes to inlay view', () => {
       albumShowcase.find('.artwork--hover-right').simulate('click');
-      expect(albumShowcase.find('.artwork.artwork--inside-view')).to.have.length(1);
+      expect(albumShowcase.find('.artwork.artwork--inlay-view')).to.have.length(1);
     });
 
     it('changes back from back to front view', () => {
@@ -73,7 +73,7 @@ describe('<AlbumShowcase />', () => {
 
     it('changes back from back to front view', () => {
       albumShowcase.find('.artwork--hover-right').simulate('click');
-      albumShowcase.find('.artwork__front-inlay').simulate('click');
+      albumShowcase.find('.artwork__front-inside').simulate('click');
       expect(albumShowcase.find('.artwork.artwork--front-view')).to.have.length(1);
     });
 
